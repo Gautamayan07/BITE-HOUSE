@@ -7,8 +7,145 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- ================= CSS ================= -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #fdfdfd;
+            color: #333;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav h1 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        #toggleBtn {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero-img {
+            width: 60%;
+            max-height: 220px;
+            object-fit: contain;
+            margin: 0 auto 20px;
+            display: block;
+            border-radius: 10px;
+        }
+
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+        }
+
+        /* Buttons */
+        button {
+            padding: 12px 25px;
+            border-radius: 25px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            background: #e63946;
+            color: white;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        button:hover {
+            background: #c72c3a;
+            transform: scale(1.05);
+        }
+
+        /* Menu Section */
+        .menu {
+            text-align: center;
+            padding: 40px 20px;
+            background: #fff8f0;
+        }
+
+        .menu-item {
+            background: white;
+            max-width: 420px;
+            margin: 15px auto;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .menu-item span {
+            font-weight: bold;
+            color: #e63946;
+        }
+
+        .menu-img {
+            width: 60px;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: white;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background: white;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                padding: 15px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            }
+
+            #toggleBtn {
+                display: block;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -18,100 +155,114 @@
     <h1>🍴 BITE HOUSE</h1>
 
     <ul id="menuLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#food">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
     </ul>
 
     <button id="toggleBtn">☰</button>
 </nav>
 
-<!-- ================= HERO SECTION ================= -->
-<section class="hero">
-    <img src="images/pexels-pixabay-262047.jpg" alt="Restaurant Image" class="hero-img">
-
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+    <img src="images/pexels-pixabay-262047.jpg" alt="Restaurant" class="hero-img">
     <h2>Delicious Food, A Legacy of Flavor</h2>
     <p>Fresh • Tasty • Affordable</p>
-
     <button id="orderBtn">Order Now</button>
 </section>
 
 <!-- ================= FOOD MENU ================= -->
-<section class="menu">
-
+<section class="menu" id="food">
     <h2>🍽️ Food Menu</h2>
 
     <div class="menu-item">
         <h3>🍕 Margherita Pizza</h3>
-        <p>Fresh cheese, tomato sauce & herbs</p>
+        <p>Cheese, tomato & herbs</p>
         <span>₹299</span>
     </div>
 
     <div class="menu-item">
         <h3>🍔 Veg Burger</h3>
-        <p>Crispy patty with fresh veggies</p>
+        <p>Crispy patty with veggies</p>
         <span>₹199</span>
     </div>
 
     <div class="menu-item">
         <h3>🍝 White Sauce Pasta</h3>
-        <p>Creamy pasta with garlic & cheese</p>
+        <p>Creamy garlic & cheese</p>
         <span>₹249</span>
     </div>
 
     <div class="menu-item">
         <h3>🥤 Cold Coffee</h3>
-        <p>Chilled & refreshing</p>
         <span>₹149</span>
     </div>
-
 </section>
 
 <!-- ================= WINE MENU ================= -->
 <section class="menu">
-
     <h2>🍷 Wine Collection</h2>
 
     <div class="menu-item">
-        <img src="images/red-wine.png" class="menu-img" alt="Red Wine">
+        <img src="images/red-wine.png" class="menu-img">
         <h3>Red Wine</h3>
-        <p>Classic dry red wine</p>
         <span>₹1200 – ₹2500</span>
     </div>
 
     <div class="menu-item">
-        <img src="images/white-wine.png" class="menu-img" alt="White Wine">
+        <img src="images/white-wine.png" class="menu-img">
         <h3>White Wine</h3>
-        <p>Light & refreshing</p>
         <span>₹1000 – ₹2200</span>
     </div>
 
     <div class="menu-item">
-        <img src="images/sparkling-wine.png" class="menu-img" alt="Sparkling Wine">
+        <img src="images/sparkling-wine.png" class="menu-img">
         <h3>Sparkling Wine</h3>
-        <p>Bubbly & celebratory</p>
         <span>₹1800 – ₹3500</span>
     </div>
-
-    <div class="menu-item">
-        <img src="images/rose-wine.png" class="menu-img" alt="Rose Wine">
-        <h3>Rosé Wine</h3>
-        <p>Fruity & smooth</p>
-        <span>₹1500 – ₹2800</span>
-    </div>
-
-    <div class="menu-item">
-        <img src="images/premium-wine.png" class="menu-img" alt="Premium Wine">
-        <h3>Premium Reserve</h3>
-        <p>Aged luxury selection</p>
-        <span>₹4000 – ₹9000</span>
-    </div>
-
 </section>
 
+<!-- ================= ABOUT ================= -->
+<section class="menu" id="about">
+    <h2>About Us</h2>
+    <p style="max-width:600px;margin:auto;">
+        Bite House is a cozy restaurant serving fresh, tasty and affordable food.
+        We believe good food creates good memories.
+    </p>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="menu" id="contact">
+    <h2>Contact Us</h2>
+    <p>📍 Bhilai, India</p>
+    <p>📞 +91 7970831337</p>
+    <p>✉️ bitehouse@email.com</p>
+</section>
+
+<footer>
+    © 2025 Bite House. All Rights Reserved.
+</footer>
+
 <!-- ================= JAVASCRIPT ================= -->
-<script src="js/script.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const menuLinks = document.getElementById("menuLinks");
+        const toggleBtn = document.getElementById("toggleBtn");
+
+        toggleBtn.addEventListener("click", () => {
+            menuLinks.style.display =
+                menuLinks.style.display === "flex" ? "none" : "flex";
+        });
+
+        const orderBtn = document.getElementById("orderBtn");
+        orderBtn.addEventListener("click", () => {
+            document.getElementById("food")
+                .scrollIntoView({ behavior: "smooth" });
+        });
+    });
+</script>
 
 </body>
 </html>
