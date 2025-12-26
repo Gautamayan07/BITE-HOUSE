@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<title>BITE HOUSE</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+<!-- Linking CSS file
+     I put styles in a separate file so HTML looks cleaner -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+<!-- Navigation bar section -->
+<nav>
+    <!-- Website name -->
+    <h1>🍴 BITE HOUSE</h1>
+
+    <!-- Menu links list -->
+    <ul id="menuLinks">
+        <!-- Each link goes to a different page -->
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <!-- Button for mobile menu
+         (JS will control this later) -->
+    <button id="toggleBtn">☰</button>
+</nav>
+
+<!-- Main hero section -->
+<section class="hero">
+    <img src="images/pexels-pixabay-262047.jpg" alt="Restaurant Image" class="hero-img">
+    <h2>Delicious Food, A Legacy of Flavor</h2>
+
+    <!-- Small description text -->
+    <p>Fresh • Tasty • Affordable</p>
+
+    <!-- Order button (not connected yet) -->
+    <button id="orderBtn">Order Now</button>
+</section>
+<!-- Section heading -->
+<h2 style="text-align:center;">Our Menu</h2>
+<!-- Food Menu Section -->
+ <h2 style="text-align:center;">Food Section</h2>
+
+<!-- First menu item -->
+<div class="menu-item">
+    <h3>🍕 Margherita Pizza</h3>
+    <p>Fresh cheese, tomato sauce & herbs</p>
+
+    <!-- Price of the item -->
+    <span>₹299</span>
+</div>
+
+<!-- Second menu item -->
+<div class="menu-item">
+    <h3>🍔 Veg Burger</h3>
+    <p>Crispy patty with fresh veggies</p>
+    <span>₹199</span>
+</div>
+
+<!-- Third menu item -->
+<div class="menu-item">
+    <h3>🍝 White Sauce Pasta</h3>
+    <p>Creamy pasta with garlic & cheese</p>
+
+    <!-- Keeping price in span for styling later -->
+    <span>₹249</span>
+</div>
+
+<!-- Fourth menu item -->
+<div class="menu-item">
+    <h3>🥤 Cold Coffee</h3>
+    <p>Chilled & refreshing</p>
+    <span>₹149</span>
+</div>
+
+<h2 style="text-align:center;">Our Menu</h2>
+<!-- Wine Menu Section -->
+<section class="menu">
+
+    <h2>🍷 Wine Collection</h2>
+
+    <!-- Red Wine -->
+    <div class="menu-item">
+        <img src="images/red-wine.png" class="menu-img" alt="Red Wine">
+        <h3>Red Wine</h3>
+        <p>Classic dry red wine</p>
+        <span>₹1200 – ₹2500</span>
+    </div>
+
+    <!-- White Wine -->
+    <div class="menu-item">
+        <img src="images/white-wine.png" class="menu-img" alt="White Wine">
+        <h3>White Wine</h3>
+        <p>Light & refreshing</p>
+        <span>₹1000 – ₹2200</span>
+    </div>
+
+    <!-- Sparkling Wine -->
+    <div class="menu-item">
+        <img src="images/sparkling-wine.png" class="menu-img" alt="Sparkling Wine">
+        <h3>Sparkling Wine</h3>
+        <p>Bubbly & celebratory</p>
+        <span>₹1800 – ₹3500</span>
+    </div>
+
+    <!-- Rosé Wine -->
+    <div class="menu-item">
+        <img src="images/rose-wine.png" class="menu-img" alt="Rose Wine">
+        <h3>Rosé Wine</h3>
+        <p>Fruity & smooth</p>
+        <span>₹1500 – ₹2800</span>
+    </div>
+
+    <!-- Premium Wine -->
+    <div class="menu-item">
+        <img src="images/premium-wine.png" class="menu-img" alt="Premium Wine">
+        <h3>Premium Reserve</h3>
+        <p>Aged luxury selection</p>
+        <span>₹4000 – ₹9000</span>
+    </div>
+
+</section>
+
+
+<!-- JavaScript file
+     Placed at the bottom so page loads first -->
+<script src="js/script.js"></script>
