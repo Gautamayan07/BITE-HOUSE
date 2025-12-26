@@ -1,38 +1,108 @@
-/* Flexbox to align items */
-display: flex;
-justify-content: space-between;
-align-items: center;
+/* Reset default browser spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-padding: 15px;   /* space inside nav */
-border: none;        /* remove default border */
-cursor: pointer;     /* show pointer on hover */
-/* Hide menu on small screens
-   JS will toggle this later */
+/* Body */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fdfdfd;
+    color: #333;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Logo */
+nav h1 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Nav links */
 nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Mobile toggle button */
+#toggleBtn {
     display: none;
-    flex-direction: column;   /* stack items vertically */
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
 }
 
-
-.menu {
-    padding: 40px;
-    background-color: #fff8f0;
-}
-
-.menu h2 {
+/* Hero section */
+.hero {
     text-align: center;
-    margin-bottom: 30px;
+    padding: 40px 20px;
+}
+
+.hero-img {
+    width: 60%;
+    max-height: 220px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+}
+
+.hero h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    margin-bottom: 15px;
+}
+
+/* Buttons */
+button {
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    background-color: #e63946;
+    color: white;
+    transition: transform 0.3s, background 0.3s;
+}
+
+button:hover {
+    background-color: #c72c3a;
+    transform: scale(1.05);
+}
+
+/* Menu section */
+.menu {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #fff8f0;
 }
 
 .menu-item {
     background: white;
     padding: 15px;
-    margin-bottom: 15px;
+    margin: 15px auto;
     border-radius: 8px;
-}
-
-.menu-item h3 {
-    margin: 0;
+    max-width: 400px;
 }
 
 .menu-item span {
@@ -40,35 +110,26 @@ nav ul {
     color: #e63946;
 }
 
-.hero-img {
-    width: 60%;
-    max-height: 200px;
-    object-fit: contain;
-    display: block;
-    border-radius: 8px;
-    margin-bottom: 0 auto 15px;
-}
-button {
-    padding: 12px 25px;
-border-radius: 25px;         /* rounded button looks nicer */
-font-size: 16px;
-
-cursor: pointer;
-
-/* Smooth hover effect */
-transition: transform 0.3s, background 0.3s;
-}
-.menu {
-    text-align: center;
-    padding: 20px;
-}
-
-.menu h2 {
-    margin-bottom: 25px;
-}
-
 .menu-img {
     width: 60px;
-    height: auto;
     margin-bottom: 10px;
 }
+
+/* Mobile view */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    #toggleBtn {
+        display: block;
+    }
+}
+
