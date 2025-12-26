@@ -14,6 +14,7 @@ body {
 
 /* Navbar */
 nav {
+    position: relative; /* IMPORTANT */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -115,8 +116,9 @@ button:hover {
     margin-bottom: 10px;
 }
 
-/* Mobile view */
+/* MOBILE VIEW */
 @media (max-width: 768px) {
+
     nav ul {
         display: none;
         flex-direction: column;
@@ -128,8 +130,12 @@ button:hover {
         box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
 
+    /* This class will be toggled by JS */
+    nav ul.show {
+        display: flex;
+    }
+
     #toggleBtn {
         display: block;
     }
 }
-

@@ -7,8 +7,133 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
-    <!-- ================= CSS ================= -->
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ========== GLOBAL ========= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #fdfdfd;
+            color: #333;
+        }
+
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* ========== NAVBAR ========= */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        /* ===== Mobile Menu Button ===== */
+        #menuToggle {
+            display: none;
+        }
+
+        .menu-icon {
+            font-size: 26px;
+            cursor: pointer;
+            display: none;
+        }
+
+        /* ========== HERO ========= */
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero-img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .hero a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            background: #e63946;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+        }
+
+        /* ========== MENU SECTIONS ========= */
+        .menu {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .menu-item {
+            background: #fff;
+            margin: 15px auto;
+            padding: 15px;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .menu-img {
+            width: 60px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #222;
+            color: #fff;
+        }
+
+        /* ========== MOBILE RESPONSIVE ========= */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background: #fff;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                width: 200px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            }
+
+            #menuToggle:checked + .menu-icon + ul {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -17,14 +142,18 @@
 <nav>
     <h1>🍴 BITE HOUSE</h1>
 
-    <ul id="menuLinks">
+    <!-- Checkbox (hidden) -->
+    <input type="checkbox" id="menuToggle">
+
+    <!-- Label acts as button -->
+    <label for="menuToggle" class="menu-icon">☰</label>
+
+    <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#food">Menu</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
-
-    <button id="toggleBtn">☰</button>
 </nav>
 
 <!-- ================= HERO ================= -->
@@ -32,7 +161,9 @@
     <img src="images/pexels-pixabay-262047.jpg" alt="Restaurant" class="hero-img">
     <h2>Delicious Food, A Legacy of Flavor</h2>
     <p>Fresh • Tasty • Affordable</p>
-    <button id="orderBtn">Order Now</button>
+
+    <!-- Anchor scroll (NO JS) -->
+    <a href="#food">Order Now</a>
 </section>
 
 <!-- ================= FOOD MENU ================= -->
@@ -106,26 +237,6 @@
 <footer>
     © 2025 Bite House. All Rights Reserved.
 </footer>
-
-<!-- ================= JAVASCRIPT ================= -->
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-
-        const menuLinks = document.getElementById("menuLinks");
-        const toggleBtn = document.getElementById("toggleBtn");
-
-        toggleBtn.addEventListener("click", () => {
-            menuLinks.style.display =
-                menuLinks.style.display === "flex" ? "none" : "flex";
-        });
-
-        const orderBtn = document.getElementById("orderBtn");
-        orderBtn.addEventListener("click", () => {
-            document.getElementById("food")
-                .scrollIntoView({ behavior: "smooth" });
-        });
-    });
-</script>
 
 </body>
 </html>
